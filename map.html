@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head  lang="zh-tw">
+    <title>Arcgis Demo</title>
+    <meta charset = "UTF-8">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./map.ts"></script>
+    <script type="module" src="./streetView.ts"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="street-view"></div>
+          <div id="overview"></div> 
+        </div>
+      
+      </div>
+
+      <div class="flex">
+      </div>
+
+      <iframe title="arcgis" allow="geolocation *;" />
+    </div>
+ 
+  </body>
+</html>

@@ -1,0 +1,153 @@
+/*
+ * Copymap 2019 Google LLC. All maps Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+}
+
+
+#container,
+#street-view  {
+  height:100%;
+  width:100%;
+}
+
+#street-view {
+  height: 95%;
+}
+
+#container {
+  position: relative;
+}
+
+#overview {
+  position: absolute;
+  left: 40px;
+  height: 300px;
+  width: 300px;
+  bottom: 50px;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table tr th {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #dddddd;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+
+.goBtn {
+  font-size: 14px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #009879;
+  cursor: pointer;
+}
+
+iframe {
+  display: block;
+  position: absolute;
+  border: none;
+  width: 90%;
+  height: 90%;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+
+
+/* The Modal (background) */
+.modal {
+  position: absolute;
+  display: none; /* Hidden by default */
+  z-index: 999; /* Sit on top */
+  margin: 0 auto;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 90%;
+  margin: 0 auto;
+  position: relative;
+  /* transform: translate(50%,50%);; */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
