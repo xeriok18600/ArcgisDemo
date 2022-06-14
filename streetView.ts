@@ -31,6 +31,7 @@ loader.load().then(() => {
       },
     }
   );
+  console.log(`Zoom: ${map.getZoom()}`);
   map.addListener('zoom_changed', function () {
     const nowZoom = map.getZoom();
     console.log(`Zoom: ${nowZoom}`);
