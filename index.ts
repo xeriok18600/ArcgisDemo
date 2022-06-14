@@ -1,10 +1,10 @@
 const tableData = [
     {
         id: 0,
-        x: '',
-        y: '',
-        xy: '',
-        address: ''
+        x: '""',
+        y: '""',
+        xy: '""',
+        address: '""'
     },
     {
         id: 1,
@@ -150,7 +150,7 @@ const tableData = [
 
 
 
-function initTableData () {
+function initTableData() {
     const tbody = document.querySelector('tbody') as HTMLElement;
     tableData.forEach(ele => {
         const tr = document.createElement('tr');
@@ -162,38 +162,33 @@ function initTableData () {
         yRow.innerHTML = `${ele.y}`;
         const xyRow = document.createElement('td');
         xyRow.innerHTML = `${ele.xy}`;
-        const addressRow =  document.createElement('td');
+        const addressRow = document.createElement('td');
         addressRow.innerHTML = `${ele.address}`
-        const actionRow =  document.createElement('td');
+        const actionRow = document.createElement('td');
         actionRow.innerHTML = `<button id=${ele.id}  class="goBtn" data-x=${ele.x} data-y=${ele.y} data-xy=${ele.xy}>前往地圖</button>`
-        
+
         tr.appendChild(idRow);
         tr.appendChild(xRow);
         tr.appendChild(yRow);
         tr.appendChild(xyRow);
         tr.appendChild(addressRow);
         tr.appendChild(actionRow);
-        tbody.appendChild(tr);  
+        tbody.appendChild(tr);
     });
 }
 
-function bindBtnEvent(){
+function bindBtnEvent() {
     const allBtn = document.querySelectorAll('.goBtn');
     allBtn.forEach(ele => {
-        ele?.addEventListener('click', ()=> {
-            const position = {
-                id: ele?.getAttribute('id'),
-                x: ele?.getAttribute('data-x'),
-                y: ele?.getAttribute('data-y'),
-                xy: ele?.getAttribute('data-xy'),
-            }
-            goMap(position)
-            });
+        ele?.addEventListener('click', () => {
+            const xy = ele?.getAttribute('data-xy')
+            goMap(xy)
+        });
     });
 }
 
-function goMap({id,x,y,xy}){
-    window.location.href = `map.html?${id}&${x}&${y}&${xy}`;
+function goMap(xy) {
+    window.location.href = `map.html?${xy.indexOf('""') === -1 ? xy : ''}`;
 }
 
 
