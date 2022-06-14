@@ -31,6 +31,10 @@ loader.load().then(() => {
       },
     }
   );
+  map.addListener('zoom_changed', function () {
+    const nowZoom = map.getZoom();
+    console.log(`Zoom: ${nowZoom}`);
+  });
 
   map.setStreetView(panorama);
 });
