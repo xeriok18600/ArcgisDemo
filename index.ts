@@ -1,3 +1,4 @@
+// 國泰 map 資料
 const tableData = [
     {
         id: 0,
@@ -149,7 +150,7 @@ const tableData = [
 ]
 
 
-
+// 建立 table dom
 function initTableData() {
     const tbody = document.querySelector('tbody') as HTMLElement;
     tableData.forEach(ele => {
@@ -177,6 +178,7 @@ function initTableData() {
     });
 }
 
+// 綁定前往地圖事件
 function bindBtnEvent() {
     const allBtn = document.querySelectorAll('.goBtn');
     allBtn.forEach(ele => {
@@ -187,6 +189,7 @@ function bindBtnEvent() {
     });
 }
 
+// 前往地圖並帶 xy 參數讓 arcgis 讀取
 function goMap(xy) {
     window.location.href = `map.html?${xy.indexOf('""') === -1 ? xy : ''}`;
 }
